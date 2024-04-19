@@ -26,15 +26,13 @@ namespace csharp_oop_shop
                 Name = string.Empty;
                 Description = string.Empty;
                 Price = 0;
-                Iva = 0;
             }   
 
-            public Product( string name, string description, double price, double iva) :this()
+            public Product( string name, string description, double price) :this()
             {
                 Name = name;
                 Description = description;
                 Price = price;
-                Iva = iva;
             }
 
             public void SetName( string name )
@@ -48,15 +46,13 @@ namespace csharp_oop_shop
                 Console.WriteLine(description);
             }
 
-            public void SetPrice(double price)
+            public void SetPrice(double price, double iva = 0.22)
             {
                 Console.WriteLine($"Il prezzo del prodotto é {price}$");
-            }
-
-            public void SetIva(double price, double iva)
-            {
                 Console.WriteLine($"Il prezzo del prodotto con l'IVA é {price + (price * iva)}");
             }
+
+            
 
         }
 
@@ -80,7 +76,7 @@ namespace csharp_oop_shop
     {
         static void Main(string[] args)
         {
-            Product product = new Product("Mozzarella", "lorem ipsum", 4, 0.04);
+            Product product = new Product("Mozzarella", "lorem ipsum", 4);
 
             Console.WriteLine("PRODOTTO 1");
 
@@ -89,10 +85,10 @@ namespace csharp_oop_shop
             product.SetName("Mozzarella");
             product.SetDescription("lorem ipsum");
             product.SetPrice(4);
-            product.SetIva(4, 0.04);
+            
 
 
-             Product product2 = new Product("Pane", "lorem ipsum2", 1.20, 0.10);
+             Product product2 = new Product("Pane", "lorem ipsum2", 1.20);
 
             Console.WriteLine("----------------------");
 
@@ -101,8 +97,16 @@ namespace csharp_oop_shop
             product.SetName("Pane");
             product.SetDescription("lorem ipsum2");
             product.SetPrice(1.20);
-            product.SetIva(1.20, 0.10);
 
+
+
+            Product product3 = new Product("Pasta e fagioli", "lorem ipsum3", 8.50);
+
+            Console.WriteLine("----------------------");
+
+            Console.WriteLine("PRODOTTO 3");
+
+            product.randomCode();
         }
     }
 }
