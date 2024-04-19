@@ -37,12 +37,12 @@ namespace csharp_oop_shop
 
             public void SetName( string name )
             {
-                Console.WriteLine($"Il nome del prodotto é {name}");
+                Console.WriteLine(name);
             }
 
             public void SetDescription(string description)
             {
-                Console.WriteLine("La descrizione del prodotto é:");
+                Console.WriteLine("Descrizione:");
                 Console.WriteLine(description);
             }
 
@@ -63,7 +63,7 @@ namespace csharp_oop_shop
                 Random rng = new Random();
                 int code = rng.Next(1000, 9999);
 
-                Console.WriteLine($"Il codice del prodotto é {code}");
+                Console.Write($"code: {code}");
 
                 return product;
             }
@@ -81,8 +81,7 @@ namespace csharp_oop_shop
             Console.WriteLine("PRODOTTO 1");
 
 
-            product.randomCode();
-            product.SetName("Mozzarella");
+            product.randomCode(); Console.Write(" - "); product.SetName("Mozzarella");
             product.SetDescription("lorem ipsum");
             product.SetPrice(4);
             
@@ -93,8 +92,7 @@ namespace csharp_oop_shop
             Console.WriteLine("----------------------");
 
             Console.WriteLine("PRODOTTO 2");
-            product.randomCode();
-            product.SetName("Pane");
+            product.randomCode(); Console.Write(" - "); product.SetName("Pane");
             product.SetDescription("lorem ipsum2");
             product.SetPrice(1.20);
 
@@ -106,7 +104,9 @@ namespace csharp_oop_shop
 
             Console.WriteLine("PRODOTTO 3");
 
-            product.randomCode();
+            product.randomCode(); Console.Write(" - "); product.SetName("Pasta e fagioli");
+            product.SetDescription("lorem ipsum3");
+            product.SetPrice(8.50);
         }
     }
 }
